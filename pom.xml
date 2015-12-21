@@ -263,6 +263,7 @@
                  <deployProperties>
                    <vcs.revision>{{GIT_COMMIT}}</vcs.revision>
                    <build.name>{{JOB_NAME}}</build.name>
+                   <build.number>{{TRAVIS_BUILD_NUMBER|BUILD_ID}}</build.number>
                  </deployProperties>
                  <licenses>
                    <autoDiscover>true</autoDiscover>
