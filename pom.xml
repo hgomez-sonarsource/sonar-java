@@ -278,8 +278,8 @@
                    <snapshotRepoKey>${artifactory.snapshot.repo}</snapshotRepoKey>
                  </publisher>
                  <buildinfo>
-                   <buildNumber>{{DRONE_BUILD_NUMBER|TRAVIS_BUILD_NUMBER|CI_BUILD_NUMBER|BUILD_NUMBER|BUILD_ID}}</buildNumber>
-                   <buildUrl>{{DRONE_BUILD_URL|CI_BUILD_URL|BUILD_URL}}</buildUrl>
+                   <buildNumber>{{TRAVIS_BUILD_NUMBER|BUILD_ID}}</buildNumber>
+                   <buildUrl>{{CI_BUILD_URL|BUILD_URL}}</buildUrl>
                    <vcsRevision>{{GIT_COMMIT}}</vcsRevision>
                  </buildinfo>
                </configuration>
