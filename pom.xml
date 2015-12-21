@@ -238,4 +238,58 @@
     </dependencies>
   </dependencyManagement>
 
+  <profiles>
+    <profile>
+      <id>artifactory</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.jfrog.buildinfo</groupId>
+            <artifactId>artifactory-maven-plugin</artifactId>
+            <version>2.4.0</version>
+            <inherited>false</inherited>
+            <executions>
+              <execution>
+                <id>build-info</id>
+                <goals>
+                  <goal>publish</goal>
+                </goals>
+                <configuration>
+                  <artifactory>
+                    <envVarsExcludePatterns>*password*,*secret*</envVarsExcludePatterns>
+                    <envVarsIncludePatterns>*</envVarsIncludePatterns>
+                    <includeEnvVars>true</includeEnvVars>
+                 </artifactory>
+                 <deployProperties>
+                   <vcs.revision>{{GIT_COMMIT}}</vcs.revision>
+                 </deployProperties>
+                 <licenses>
+                   <autoDiscover>true</autoDiscover>
+                   <includePublishedArtifacts>false</includePublishedArtifacts>
+                   <runChecks>true</runChecks>
+                   <scopes>project,provided</scopes>
+                   <violationRecipients>henri.gomez@sonarsource.com</violationRecipients>
+                 </licenses>                 
+                 <publisher>
+                   <contextUrl>${artifactory.url}</contextUrl>
+                   <username>${artifactory.user}</username>
+                   <password>${artifactory.password}</password>
+                   <repoKey>${artifactory.repo}</repoKey>
+                   <snapshotRepoKey>${artifactory.snapshot.repo}</snapshotRepoKey>
+                 </publisher>
+                 <buildinfo>
+                   <buildNumber>{{DRONE_BUILD_NUMBER|TRAVIS_BUILD_NUMBER|CI_BUILD_NUMBER|BUILD_NUMBER}}</buildNumber>
+                   <buildUrl>{{DRONE_BUILD_URL|CI_BUILD_URL|BUILD_URL}}</buildUrl>
+                   <vcsRevision>{{GIT_COMMIT}}</vcsRevision>
+                 </buildinfo>
+               </configuration>
+             </execution>
+           </executions>
+         </plugin>
+       </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+
 </project>
