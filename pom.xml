@@ -256,7 +256,7 @@
                 </goals>
                 <configuration>
                   <artifactory>
-                    <envVarsExcludePatterns>*password*,*PASSWORD*,*secret*</envVarsExcludePatterns>
+                    <envVarsExcludePatterns>*password*,*PASSWORD*,*secret*,*MAVEN_CMD_LINE_ARGS*,sun.java.command</envVarsExcludePatterns>
                     <envVarsIncludePatterns>*</envVarsIncludePatterns>
                     <includeEnvVars>true</includeEnvVars>
                  </artifactory>
