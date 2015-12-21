@@ -262,6 +262,7 @@
                  </artifactory>
                  <deployProperties>
                    <vcs.revision>{{GIT_COMMIT}}</vcs.revision>
+                   <build.name>{{JOB_NAME}}</build.name>
                  </deployProperties>
                  <licenses>
                    <autoDiscover>true</autoDiscover>
