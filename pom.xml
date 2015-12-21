@@ -276,6 +276,8 @@
                    <password>${artifactory.password}</password>
                    <repoKey>${artifactory.repo}</repoKey>
                    <snapshotRepoKey>${artifactory.snapshot.repo}</snapshotRepoKey>
+                   <publishBuildInfo>true</publishBuildInfo>
+                   <publishArtifacts>true</publishArtifacts>
                  </publisher>
                  <buildinfo>
                    <buildNumber>{{TRAVIS_BUILD_NUMBER|BUILD_ID}}</buildNumber>
