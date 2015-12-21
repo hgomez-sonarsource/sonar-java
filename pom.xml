@@ -259,6 +259,8 @@
                     <envVarsExcludePatterns>*password*,*PASSWORD*,*secret*,*MAVEN_CMD_LINE_ARGS*,sun.java.command</envVarsExcludePatterns>
                     <envVarsIncludePatterns>*</envVarsIncludePatterns>
                     <includeEnvVars>true</includeEnvVars>
+                    <timeoutSec>60</timeoutSec>
+                    <propertiesFile>publish.properties</propertiesFile>
                  </artifactory>
                  <deployProperties>
                    <vcs.revision>{{GIT_COMMIT}}</vcs.revision>
