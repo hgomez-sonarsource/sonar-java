@@ -281,12 +281,12 @@
                    <publishBuildInfo>true</publishBuildInfo>
                    <publishArtifacts>true</publishArtifacts>
                  </publisher>
-                 <buildinfo>
+                 <buildInfo>
                    <buildName>{{JOB_NAME}}</buildName> 
                    <buildNumber>{{TRAVIS_BUILD_NUMBER|BUILD_ID}}</buildNumber>
                    <buildUrl>{{CI_BUILD_URL|BUILD_URL}}</buildUrl>
                    <vcsRevision>{{GIT_COMMIT}}</vcsRevision>
-                 </buildinfo>
+                 </buildInfo>
                </configuration>
              </execution>
            </executions>
